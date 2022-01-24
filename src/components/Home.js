@@ -1,28 +1,23 @@
 import react, { useState } from "react";
-import "../../src/index.css";
-import { useNavigate, Link } from "react-router-dom";
+import "../../src/index.css"
+import { useNavigate,Link } from "react-router-dom";
+function Home({ login, error }) {
+const [details, setDetails] = useState({ email: "", password: "" });
+const navigate=useNavigate()
 
-function Signup_page() {
-  const [details, setDetails] = useState({ name: "", email: "", password: "" });
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // login(details);
+    login(details);
   };
   return (
     <form onSubmit={submitHandler}>
       <div className="form-inner">
-        <h2>Create Account</h2>
-        {/* {error != "" ? <div className="error">{error}</div> : ""} */}
+        <h2>LOG IN</h2>
+        {error != "" ? <div className="error">{error}</div> : ""}
 
         <div className="form-group">
-          <label htmlFor="name">FULL NAME:</label>
-          <input
-            type="text"
-            onChange={(e) => setDetails({ ...details, name: e.target.value })}
-            value={details.name}
-          />
           <label htmlFor="email">EMAIL ID:</label>
           <input
             type="email"
@@ -45,14 +40,17 @@ function Signup_page() {
           />
         </div>
         <div className="buttons">
-          <button className="credentials"> Sign up</button>
-          <button component={Link} to="/login" size="medium">
-            <a href="/login">Already have an account?</a>
-          </button>
+        <button className="credentials">
+            LOGIN</button>
+            <button component={Link} to='/signup' size="medium"> 
+            <a href="/signup">CREATE ACCOUNT</a>
+         
+       </button>
         </div>
+        
       </div>
     </form>
   );
 }
 
-export default Signup_page;
+export default Home;

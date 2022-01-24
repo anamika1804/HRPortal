@@ -6,13 +6,6 @@
   
 }
 
-input, button{
-  appearance: none;
-  background-color: none;
-  border: none;
-  outline: none;
-}
-
 .App{
   height: 100vh;
   display: flex;
@@ -131,5 +124,17 @@ form .form-inner input[type="submit"] :hover,
   font-weight: 700;
 
 
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  background-color: #FE4880 30% #FFCE00 50%;
+  margin: 5px;
+}
+
+.credentials{
+  background-color: #FE4880;
+  margin: 5px;
 }
 
